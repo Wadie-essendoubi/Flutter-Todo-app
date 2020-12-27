@@ -1,6 +1,7 @@
 # Todo App
 
 A new Todo App project Using Flutter.
+
 ![](todo.gif)
 
 ## Getting Started
