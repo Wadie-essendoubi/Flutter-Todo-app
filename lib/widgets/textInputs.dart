@@ -31,7 +31,7 @@ class TexInput extends StatelessWidget {
           children: <Widget>[
             TextField(
               decoration: InputDecoration(
-                  labelText: 'type',
+                  labelText: 'Type',
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                       borderSide: BorderSide(color: Colors.green, width: 4))),
@@ -42,7 +42,7 @@ class TexInput extends StatelessWidget {
             ),
             TextField(
               decoration: InputDecoration(
-                  labelText: 'title',
+                  labelText: 'Title',
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                       borderSide: BorderSide(color: Colors.green, width: 4))),
