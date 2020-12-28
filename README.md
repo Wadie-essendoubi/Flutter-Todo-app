@@ -1,6 +1,8 @@
-# todoapp
+# Todo App
 
-A new Flutter project.
+A new Todo App project Using Flutter.
+
+![](todo.gif)
 
 ## Getting Started
 
