@@ -4,8 +4,8 @@ import 'package:intl/intl.dart';
 //import 'package:device_simulator/device_simulator.dart';
 import 'package:todoapp/models/todoclass.dart';
 
-import 'Paint/todoPaint.dart';
-import 'widgets/textInputs.dart';
+import '../Paint/todoPaint.dart';
+import '../widgets/textInputs.dart';
 
 class AddTodo extends StatefulWidget {
   @override
@@ -19,19 +19,18 @@ class _AddTodoState extends State<AddTodo> {
 
   List<TodoList> listtotdo = [];
   void Add_do() {
-    if (_titleValue.text != '' && _typeValue.text != '' && pickeddate  != null) {
+    if (_titleValue.text != '' && _typeValue.text != '' && pickeddate != null) {
       setState(() {
         listtotdo.add(TodoList(
             date: pickeddate, title: _titleValue.text, type: _typeValue.text));
-            _titleValue.text = '' ;
-            _typeValue.text = '';
-            pickeddate = null;
-
+        _titleValue.text = '';
+        _typeValue.text = '';
+        pickeddate = null;
 
         print(_typeValue.text);
         print(_titleValue.text);
         print(pickeddate);
-       // Navigator.pop(context);
+       //Navigator.pop(context);
 
         //Navigator.pop(context);
       });
@@ -58,24 +57,17 @@ class _AddTodoState extends State<AddTodo> {
     showModalBottomSheet(
       isScrollControlled: true,
       context: context,
-      
       builder: (_) {
-
         return TexInput(
           typeValue: _typeValue,
           titleValue: _titleValue,
           add_do: Add_do,
           showpicker: showDAtePicker,
-          
-
         );
-       // Navigator.pop(context);
+        // Navigator.pop(context);
       },
-      
     );
   }
-
-  
 
   @override
   Widget build(BuildContext context) {
@@ -126,6 +118,45 @@ class _AddTodoState extends State<AddTodo> {
     );
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           //widgets
   FlatButton build_See_All_Button() {
     return FlatButton(
       onPressed: null,
@@ -263,24 +294,45 @@ class _AddTodoState extends State<AddTodo> {
   }
 
   Padding build_Todo_InfoData(double myheght, double myweth) {
-    return  listtotdo.isEmpty
-          ? Padding(
-            padding: const EdgeInsets.only(top: 52,left: 40),
-            child: Container(
-                width: myheght * 0.3,
-                height: myheght * 0.4,
-                child: Image.asset(
-                  'lib/assets/images/tasks1.png',
-                  fit: BoxFit.contain,
-                )),
-          )
-          : Padding(
-      padding: const EdgeInsets.only(
-        top: 52,
-        left: 16,
-        bottom: 2,
-      ),
-      child: SizedBox(
+    return listtotdo.isEmpty
+        ? Padding(
+            padding: const EdgeInsets.only(top: 52, left: 20),
+            child: Card(
+              elevation: 5,
+              shadowColor: Colors.black.withOpacity(0.6),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: AutoSizeText(
+                        'Add Some Tasks !',
+                        style: TextStyle(
+                            color: Colors.green, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(11.0),
+                        child: Image.asset(
+                          'lib/assets/images/jjj.png',
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                     
+                      height: myheght * 0.4,
+                      width: myweth * 0.6,
+                    ),
+                  ],
+                )))
+        : Padding(
+            padding: const EdgeInsets.only(
+              top: 52,
+              left: 16,
+              bottom: 2,
+            ),
+            child: SizedBox(
               height: myheght * 0.5,
               width: myweth * 0.6,
               child: ListView.builder(
@@ -324,7 +376,8 @@ class _AddTodoState extends State<AddTodo> {
                               child: AutoSizeText(
                                 listtotdo[index].title,
                                 style: TextStyle(
-                                    fontSize: 19, fontWeight: FontWeight.w500),
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.green),
                               ),
                             ),
                             Padding(
@@ -366,7 +419,7 @@ class _AddTodoState extends State<AddTodo> {
                 },
               ),
             ),
-    );
+          );
   }
 
   Container buildAddTdodButton(BuildContext context) {

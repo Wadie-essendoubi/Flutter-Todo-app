@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:device_simulator/device_simulator.dart';
 
-import 'addtodo.dart';
+import 'screens/addtodoScreen.dart';
 
 void main() {
   runApp(TodoApp());
