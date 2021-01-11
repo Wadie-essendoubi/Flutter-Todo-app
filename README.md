@@ -1,6 +1,7 @@
 # Todo App
 
-A new Todo App project Using Flutter.
+A new Todo App project Using Flutter
+
 App UI to make :
 
 ![](todo_ui_app.png)
