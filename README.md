@@ -6,9 +6,6 @@ App UI to make :
 
 ![](todo_ui_app.png)
 
-my work :
-
-![](todo.gif)
 
 ## Getting Started
 
